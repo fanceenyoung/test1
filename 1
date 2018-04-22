@@ -1,2 +1,41 @@
-the first file I created.
-what the hell is that.
+from itertools import combinations
+from nltk.corpus import wordnet as wn
+
+# Open files
+f = open("/Users/yangfengqi/me/Study/Wordnet/C001.txt","r")  
+lines = f.readlines()
+
+# Organzing data form
+lines2 =[]
+
+for line in lines:
+	line2 = line.replace('\n','')
+	lines2.insert(0,line2)
+
+print lines2
+
+def change_lines(lines2):
+	while lines2:
+		lines3 = lines2.pop() +'.n.01'
+		abc.append(lines3)
+	return abc
+
+# Check the data form 
+abc = []
+abc = change_lines(lines2)
+
+print abc
+
+# Make the combination
+combins = [c for c in  combinations(abc, 2)]
+
+print combins
+
+# Calculate the similarity
+for i in range(len(combins)):
+    
+    set1 = wn.synset(combins[i][0])
+    set2 = wn.synset(combins[i][1])
+    path_distance = set1.path_similarity(set2)
+    lch_distance = set1.lch_similarity(set2)
+    print(lch_distance)
