@@ -2,7 +2,7 @@ from itertools import combinations
 from nltk.corpus import wordnet as wn
 
 # Open files
-f = open("/Users/yangfengqi/me/Study/Wordnet/C001.txt","r")  
+f = open("Path of your file","r")  
 lines = f.readlines()
 
 # Organzing data form
